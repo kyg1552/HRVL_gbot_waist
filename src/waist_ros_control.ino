@@ -16,7 +16,7 @@
   https://github.com/adamweld/microgoats_stewie
   https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/index.html#
   https://www.pololu.com/product/2327 - Linear Actuator Manual
-  https://www.pololu.com/docs/0J73 - jrk motor controller Manual
+  https://www.pololu.com/docs/0J38 - jrk motor controller Manual
   https://github.com/pololu/jrk-g2-arduino  - JrkG2 Manual
   http://docs.ros.org/api/geometry_msgs/html/msg/Vector3.html - 리니어엑추에이터 각도,길이
   - Ultrasound Sensor 
