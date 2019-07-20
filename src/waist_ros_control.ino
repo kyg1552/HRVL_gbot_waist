@@ -1,5 +1,5 @@
 /*
-   프로그램: Linear Actuator Control with Jrk Motor Controller and ros version 4.0
+   프로그램: Linear Actuator Control with Jrk Motor Controller and ros
    작성자: Young-gi Kim
    최근작성일: 2019.05.15
    설명:  .3개의 Linear Actuator를 제어(각도(roll,pitch),길이) ros이용, stewartPlatform, 3-DOF 3-RPS Parallel Manipulator
