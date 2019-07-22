@@ -14,6 +14,6 @@
      translation(y), translation(z)], rotation: [rotation(x), rotation(y), rotation(z), w]’
      
 ## Feedback Command
-    &roscore
-    &rosrun waist_Feedback LA_Feedback
-    &rosrun waist_Feedback ultrasound
+    $roscore
+    $rosrun waist_Feedback LA_Feedback
+    $rosrun waist_Feedback ultrasound
