@@ -12,8 +12,10 @@
     $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
     $rostopic pub -1 /LA_control geometry_msgs/Transform ‘[translation: [translation(x), 
      translation(y), translation(z)], rotation: [rotation(x), rotation(y), rotation(z), w]’
-### Example 
-     
+### Example
+    $roscore
+    $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
+    $rostopic pub -1 /LA_control geometry_msgs/Transform ‘[translation: [0, 0, 10], rotation: [10, 0, 0, 0]’ 
 ## Feedback Command
     $roscore
     $rosrun waist_Feedback LA_Feedback #허리의 각 Actuator들의 길이 Feedback 토픽 Publish 
