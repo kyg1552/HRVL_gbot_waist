@@ -20,6 +20,7 @@
     * Utility 설치 후 아래 링크를 참조하여 사용하는 Actuator에 맞는 Utility setup txt파일을 다운로드 받아 
       Utility 프로그램을 Setting해준다.
         * https://www.pololu.com/product/2327
+        * https://github.com/kyg1552/HRVL_gbot_waist/blob/master/Reference/LinearActuator_jrk_setup.pdf
          ![1](https://user-images.githubusercontent.com/37207332/61711681-939d5100-ad8f-11e9-8887-19512c0c3bb8.JPG)
 ***
 ## 사용보드
