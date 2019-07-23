@@ -15,6 +15,10 @@
     * https://www.pololu.com/product/1394
 * Pololu Jrk USB Motor Controller User’s Guide
     * https://www.pololu.com/docs/0J38
+* Motor Controller Utility SoftWare(Windows용)
+    * https://www.pololu.com/docs/0J38/3.a
+    * Utility 설치 후 아래 링크를 참조하여 사용하는 Actuator에 맞는 Utility setup txt파일을 다운로드 받아 Utility 프로그램을 Setting해준다.
+        * https://www.pololu.com/product/2327
 
 ***
 ## 사용보드
