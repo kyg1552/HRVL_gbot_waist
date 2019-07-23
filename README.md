@@ -17,9 +17,10 @@
     * https://www.pololu.com/docs/0J38
 * Motor Controller Utility SoftWare(Windows용)
     * https://www.pololu.com/docs/0J38/3.a
-    * Utility 설치 후 아래 링크를 참조하여 사용하는 Actuator에 맞는 Utility setup txt파일을 다운로드 받아 Utility 프로그램을 Setting해준다.
+    * Utility 설치 후 아래 링크를 참조하여 사용하는 Actuator에 맞는 Utility setup txt파일을 다운로드 받아 
+      Utility 프로그램을 Setting해준다.
         * https://www.pololu.com/product/2327
-
+        * ![1](https://user-images.githubusercontent.com/37207332/61711681-939d5100-ad8f-11e9-8887-19512c0c3bb8.JPG)
 ***
 ## 사용보드
 * Arduino Mega2560
