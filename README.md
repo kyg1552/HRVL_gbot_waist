@@ -3,7 +3,14 @@
 ## Image
 ![waist 1](https://user-images.githubusercontent.com/37207332/61573044-e0a8cb00-aae2-11e9-916d-d7835c57ecef.jpg)
 
+## Linear Actuator
+* Glideforce LACT12P-12V-05 Light-Duty Linear Actuator with Feedback: 15kgf, 12" Stroke (11.8" Usable), 1.7"/s, 12V
+* https://www.pololu.com/product/2327
 
+### Pololu Jrk USB Motor Controller User’s Guide(Linear Actuator Controller)
+* Jrk 21v3 USB Motor Controller with Feedback (Connectors Soldered)
+* https://www.pololu.com/product/1394
+** https://www.pololu.com/docs/0J38
 ## 사용보드
 * Arduino Mega2560
 
