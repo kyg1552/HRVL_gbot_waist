@@ -9,7 +9,7 @@
 * Glideforce LACT12P-12V-05 Light-Duty Linear Actuator with Feedback: 15kgf, 12" Stroke (11.8" Usable), 1.7"/s, 12V
     * https://www.pololu.com/product/2327
 
-***
+
 ## Linear Actuator Controller(Pololu)
 * Jrk 21v3 USB Motor Controller with Feedback (Connectors Soldered)
     * https://www.pololu.com/product/1394
