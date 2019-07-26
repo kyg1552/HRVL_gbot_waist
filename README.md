@@ -6,6 +6,10 @@
 ![waist 1](https://user-images.githubusercontent.com/37207332/61573044-e0a8cb00-aae2-11e9-916d-d7835c57ecef.jpg)
 
 ***
+## Architecture
+![2](https://user-images.githubusercontent.com/37207332/61938581-6ab5cf80-afcc-11e9-9985-b9321a060594.JPG)
+
+***
 ## Linear Actuator(Pololu)
 * Glideforce LACT12P-12V-05 Light-Duty Linear Actuator with Feedback: 15kgf, 12" Stroke (11.8" Usable), 1.7"/s, 12V
     * https://www.pololu.com/product/2327
