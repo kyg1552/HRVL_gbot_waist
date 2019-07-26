@@ -46,13 +46,13 @@
 1. waist, ultrasonic 디렉토리를 catkin_ws/src에 다운받는다.
 2. $catkin_make
 
-* 허리부 피드백
+* 허리부(Waist) Feedback Node Run
 
       $roscore
       $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
       $rosrun waist LA_Feedback #허리의 각 Actuator들의 길이 Feedback 토픽 Publish 
     
-* 초음파 피드백
+* 초음파 Distance Feedback Node Run 
  
       $roscore
       $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
