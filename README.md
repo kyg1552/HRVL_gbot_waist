@@ -1,7 +1,7 @@
 # HRVL_gbot_waist
 
 
-## Waist Manipulator Image
+## Waist 3-RPS 3DOF Parallel Manipulator Image
 ![waist 1](https://user-images.githubusercontent.com/37207332/61573044-e0a8cb00-aae2-11e9-916d-d7835c57ecef.jpg)
 
 ***
