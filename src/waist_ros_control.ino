@@ -3,11 +3,9 @@
    작성자: Young-gi Kim
    최근작성일: 2019.05.15
    설명:  .3개의 Linear Actuator를 제어(각도(roll,pitch),길이) ros이용, stewartPlatform, 3-DOF 3-RPS Parallel Manipulator
-     .제어를 하지 않을 때는 각 Actuator의 현재 값(Feedback 신호)를 받는다. timer0사용 100ms주기
-    .타이머2를 이용해 초음파 센서 8개 값 입력받음. 100ms 주기
+          .각 Actuator의 현재 위치 값(Feedback 신호)를 받는다. timer0사용 100ms주기
+          .타이머2를 이용해 초음파 센서 8개 값 입력받음. 100ms 주기
    사용보드: Arduino Mega
-   수정할 사항: 
-   수정한 내용: 
    reference:
    - ROS control
   http://docs.ros.org/api/geometry_msgs/html/index-msg.html - ros msg geometry_msgs manual
