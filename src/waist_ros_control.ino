@@ -4,22 +4,22 @@
    최근작성일: 2019.05.15
    설명:  .3개의 Linear Actuator를 제어(각도(roll,pitch),길이) ros이용, stewartPlatform, 3-DOF 3-RPS Parallel Manipulator
           .각 Actuator의 현재 위치 값(Feedback 신호)를 받는다. timer0사용 100ms주기
-          .타이머2를 이용해 초음파 센서 8개 값 입력받음. 100ms 주기
+          .타이머2를 이용해 초음파 센서 8개 값 입력받는다. 100ms 주기
    사용보드: Arduino Mega
    reference:
-   - ROS control
-  http://docs.ros.org/api/geometry_msgs/html/index-msg.html - ros msg geometry_msgs manual
-  https://github.com/dreamster/rosserial-example - rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
-  - 3DOF Stewart Platform
-  https://github.com/adamweld/microgoats_stewie
-  https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/index.html#
-  https://www.pololu.com/product/2327 - Linear Actuator Manual
-  https://www.pololu.com/docs/0J38 - jrk motor controller Manual
-  https://github.com/pololu/jrk-g2-arduino  - JrkG2 Manual
-  http://docs.ros.org/api/geometry_msgs/html/msg/Vector3.html - 리니어엑추에이터 각도,길이
-  - Ultrasound Sensor 
-  https://fleshandmachines.wordpress.com/2011/09/16/arduino-double-sonar-with-ros/ - 초음파센서 2개 이상 사용 시
-  http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Range.html  - 초음파 센서 값 ros type
+            - ROS control
+           http://docs.ros.org/api/geometry_msgs/html/index-msg.html - ros msg geometry_msgs manual
+           https://github.com/dreamster/rosserial-example - rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
+           - 3DOF Stewart Platform
+           https://github.com/adamweld/microgoats_stewie
+           https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/index.html#
+           https://www.pololu.com/product/2327 - Linear Actuator Manual
+           https://www.pololu.com/docs/0J38 - jrk motor controller Manual
+           https://github.com/pololu/jrk-g2-arduino  - JrkG2 Manual
+           http://docs.ros.org/api/geometry_msgs/html/msg/Vector3.html - 리니어엑추에이터 각도,길이
+           - Ultrasound Sensor 
+           https://fleshandmachines.wordpress.com/2011/09/16/arduino-double-sonar-with-ros/ - 초음파센서 2개 이상 사용 시
+           http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Range.html  - 초음파 센서 값 ros type
 */
 /////// 라이브러리 ////////////////////////
 #include "Arduino.h"  
@@ -33,7 +33,7 @@
 
 ///// 매크로 선언 /////
 #define LANumber 11  //Actuator Device Number, 3개 모두 11로 설정
-#define DIST_S 150*58.2 // 초음파센서 TimeOut 설정(최대거리) 150cm 일때 최대주기 72~73ms, 200cm일 때 최대주기 93~94ms
+#define DIST_S 150*58.2 // 초음파센서 TimeOut 설정(최대거리) 
 #define BAUDRATE1 9600
 #define BAUDRATE2 115200
 const float pi = 3.141592653; // PI
@@ -147,7 +147,7 @@ void setup()
 }
 //////setup /////
 
-///////*****  Loop  ********* //정///
+///////*****  Loop  ********* /////
 void loop()
 {
   nh.spinOnce();
@@ -157,8 +157,8 @@ void loop()
   if (cur_time - pre_time >= mtime) //mtime = 100, 100ms주기
   {
   pre_time = cur_time;
-  ultra_sensor(); // 초음파 신호 받고, 토픽 보냄.
-  LA_FB_pub();  // 피드백 신호 값 publish
+  ultra_sensor(); // 초음파 신호 값을 받아 토픽을 보낸다.
+  LA_FB_pub();  // Actuator 피드백 신호 값 publish
   }
 }
 ///// 함수 정의 부  시작 /////
@@ -185,6 +185,7 @@ void ultra_pub_setup(void)
   range_msg.header.frame_id =  frameid;
   range_msg.field_of_view = 0.1;  // fake
   range_msg.min_range = 0.0;  //minimum range value [m]
+  //range_msg.max_range = 2.0;  //minimum range value [m]
   range_msg.max_range = DIST_S/58.2*100; // maximum range value [m]
 }
 // UltraSensor Function Def.
@@ -200,7 +201,7 @@ long trig_echo(long TRIG, long ECHO)
   return (dist);
 }
 void ultra_sensor(void)
-{ // 8개 초음파 센서 값 읽어들임
+{ // 8개 초음파 센서 값 
   range_msg.range = trig_echo(trig[0], echo[0]);
   range_msg.header.stamp = nh.now();
   pub_range1.publish(&range_msg);
@@ -239,7 +240,7 @@ void ultra_sensor(void)
 //GetFeedback Funtion Def.
 void LA_setup(void)
 {
-  Serial1.begin(BAUDRATE2); //LinearActuator1 baud rate, Mega H/W UART1 사용  Serial.flush();
+  Serial1.begin(BAUDRATE2); //LinearActuator1 baud rate, Mega H/W UART1 사용
   Serial2.begin(BAUDRATE2); //LinearActuator2 baud rate, Mega H/W UART2 사용
   Serial3.begin(BAUDRATE2); //LinearActuator3 baud rate, Mega H/W UART3 사용
   Serial1.flush();
@@ -332,12 +333,12 @@ void LA_FB_pub(void) // 피드백 신호 퍼블리쉬
 
   pub.publish(&Feedback_msg);
 }
-void LA_Cb(const geometry_msgs::Transform& LA_val) // 명령 값 받아서 엑추에이터 제어
+void LA_Cb(const geometry_msgs::Transform& LA_val) // 명령 값 받아서 엑추에이터 제어하는 콜백함수
 {
   temp_z = LA_val.translation.z;
   if ( temp_z <= 10) temp_z = 10;
   z0 = (z_set - temp_z);
-  theta = -constrain(LA_val.rotation.x, mintheta, maxtheta); // 앞 뒤가 바뀌어서 - 해줘야함.
+  theta = -constrain(LA_val.rotation.x, mintheta, maxtheta); // 입력 양수: 앞, 음수: 뒤
   phi = -constrain(LA_val.rotation.y, minphi, maxphi); //입력 양수: 오른쪽, 음수: 왼쪽
 
   sp_control();
