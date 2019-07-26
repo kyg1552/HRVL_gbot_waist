@@ -7,7 +7,7 @@
 
 ***
 ## Architecture
-![3](https://user-images.githubusercontent.com/37207332/61938909-1c550080-afcd-11e9-9c55-c0d0411a4226.JPG)
+![4](https://user-images.githubusercontent.com/37207332/61940219-eb29ff80-afcf-11e9-87cc-739465d5ddbd.JPG)
 
 ***
 ## Linear Actuator(Pololu)
