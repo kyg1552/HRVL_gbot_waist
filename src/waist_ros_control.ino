@@ -66,17 +66,17 @@ void LA_FB_pub(void); // 엑추에이터 현재 길이 feedback publish
 //// 함수 선언 /////
 
 ///// 변수 선언 /////
-float p_rad = 16.0;   // platform에서 각 엑추에이터까지 반지름
-float b_rad = 16.0;   // base에서 각 엑추에이터까지 반지름
+float p_rad = 16.0;   // platform에서 각 엑추에이터까지 반지름(cm)
+float b_rad = 16.0;   // base에서 각 엑추에이터까지 반지름(cm)
 
-float LA1_length, LA2_length, LA3_length; //입력받은 각도에 따른 각 엑추에이터 길이 계산 값
-float feedback1_length, feedback2_length, feedback3_length; // 현재 엑추에이터 길이 publish할 피드백 값
+float LA1_length, LA2_length, LA3_length; //입력받은 각도에 따른 각 엑추에이터 길이 계산 값(0~4096)
+float feedback1_length, feedback2_length, feedback3_length; // 현재 엑추에이터 길이 publish할 피드백 값(0~30cm)
 //Feedback value, 0~4095
 short feedbackPosition[4]; // 현재 피드백 값 받는 변수
 
 float z_set = 30.0; // 2개의 회전 DOF로 움직임을 구속하기 위한 상수 값, 길이 변화 값으로 지정
-                    // 엑추에이터 길이가 0~30이므로 30으로 지정함.
-float z0 = 15.0;   // 사물이 충돌하기 전에 시스템의 최소 변환 z 값, platform에서부터 base까지의 거리
+                    // 엑추에이터 길이가 0~30이므로 30으로 지정함.(cm)
+float z0 = 15.0;   // 사물이 충돌하기 전에 시스템의 최소 변환 z 값, platform에서부터 base까지의 거리(cm)
 // ex) z0이 10이면, 10cm가 올라가는 것이 아니라,총 길이 30cm에서부터 10cm 내려오는 것을 말함.
 float temp_z;
 
@@ -85,7 +85,7 @@ float phi = 0.0;  // pitch(y-axis)
 
 float B[3][3]; // base, platform: 각 축 x, y, z
 float P[3][3]; // base, platform: 각 축 x, y, z
-float T[3][3] = { {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {z_set, z_set, z_set} }; //T: z_set(base,platform 2DOF 고정 길이)
+float T[3][3] = { {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {z_set, z_set, z_set} }; //T: z_set(base,platform 2DOF 고정 길이)(cm)
 float L[3][3] = { {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0} };
 float bRp[3][3];// base to platform rate
 
@@ -102,7 +102,7 @@ int maxphi   =  20;
 
 // Ultra Sensor Trig, Echo Pin
 const unsigned char trig[8] = {30, 32, 34, 36, 38, 40, 42, 44};
-const unsigned char echo[8] = {31, 33, 35, 37, 39, 41, 43, 45}; //회로연결 (22,30),(23,31),(24,32),(25,33),(26,34),(27,35),(29,36),(40,38)
+const unsigned char echo[8] = {31, 33, 35, 37, 39, 41, 43, 45};
 
 //using timer0, millis(), micros()
 unsigned long pre_time = 0;
