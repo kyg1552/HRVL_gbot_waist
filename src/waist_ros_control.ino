@@ -4,7 +4,7 @@
    최근작성일: 2019.05.15
    설명:  .3개의 Linear Actuator를 제어(각도(roll,pitch),길이) ros이용, stewartPlatform, 3-DOF 3-RPS Parallel Manipulator
           .각 Actuator의 현재 위치 값(Feedback 신호)를 받는다. timer0사용 100ms주기
-          .타이머를 이용해 100ms 주기로 초음파 센서 8개 값 입력받는다.
+          
    사용보드: Arduino Mega
    reference:
             - ROS control
