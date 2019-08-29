@@ -1,0 +1,12 @@
+1.rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+2.rosrun gbot_waist ultrasonic
+3.rosrun gbot_waist waist_Feedback
+
+4.rostopic pub -r 15 /waist_control geometry_msgs/Transform '[trans(x), trans(y), trans(z)]' '[rotation(x),rotation(y),rotation(z),w]'
+
+4.rostopic pub -r 15 /waist_control geometry_msgs/Transform '{translation: [0, 0, 15], rotation: [0, 0, 0, 0]}'
+
+5.rosrun rqt_plot rqt_plot
+
+
