@@ -37,8 +37,9 @@
       1. gbot_waist directory를 catkin_ws/src에 다운받는다.
       2. $cd ~/catkin_ws && catkin_make
 
-* http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+
 * Arduino IDE Setup
+* http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
     
       $sudo apt-get install ros-kinetic-rosserial-arduino
       $sudo apt-get install ros-kinetic-rosserial
