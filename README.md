@@ -31,9 +31,29 @@
 ## 사용보드
 * Arduino Mega2560
 
-## Test 1Mega 
-    $roscore
-    $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
+## Test 1Mega
+* Arduino IDE Setup
+    
+      $sudo apt-get install ros-kinetic-rosserial-arduino
+      $sudo apt-get install ros-kinetic-rosserial
+    
+* Installing from Source onto the ROS workstation
+
+      $cd ~/catkin_ws/src
+      $git clone https://github.com/ros-drivers/rosserial.git
+      $cd ~/catkin_ws && catkin_make
+    
+* Install ros_lib into the Arduino Environment
+    
+      $cd ~/Arduino/libraries
+      $rm -rf ros_lib
+      $rosrun rosserial_arduino make_libraries.py .
+    
+* Start waist ROS Package
+      
+      $roscore
+      $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
+
 ***
 ## 허리제어 Command
     $rostopic pub -r 15 /waist_control geometry_msgs/Transform ‘[translation: [translation(x), 
@@ -42,10 +62,11 @@
     $roscore
     $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
     $rostopic pub -r 15 /waist_control geometry_msgs/Transform '{translation: [0, 0, 15], rotation: [0, 0, 0, 0]}' 
+
 ***
 ## Feedback Command
 1. gbot_waist 디렉토리를 catkin_ws/src에 다운받는다.
-2. $catkin_make
+2. $cd ~/catkin_ws && catkin_make
 
 * 허리부(Waist) Feedback Node Run
 
