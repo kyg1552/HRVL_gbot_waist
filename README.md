@@ -39,8 +39,9 @@
 
 
 * rosserial install for Arduino
+   * http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
    * Arduino IDE Setup
-         * http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+            
     
             $sudo apt-get install ros-kinetic-rosserial-arduino
             $sudo apt-get install ros-kinetic-rosserial
@@ -57,7 +58,7 @@
          $rm -rf ros_lib
          $rosrun rosserial_arduino make_libraries.py .
 
-   * Start waist ROS Master
+* Start waist ROS Master
       
          $roscore
          $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
