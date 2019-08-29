@@ -32,6 +32,10 @@
 * Arduino Mega2560
 
 ## Test 1Mega
+* ROS Package install
+      1. gbot_waist directory를 catkin_ws/src에 다운받는다.
+      2. $cd ~/catkin_ws && catkin_make
+      
 * Arduino IDE Setup
     
       $sudo apt-get install ros-kinetic-rosserial-arduino
@@ -48,30 +52,28 @@
       $cd ~/Arduino/libraries
       $rm -rf ros_lib
       $rosrun rosserial_arduino make_libraries.py .
-    
-* Start waist ROS Package
+* http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+
+* Start waist ROS Master
       
       $roscore
       $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
-
-***
-## 허리제어 Command
-    $rostopic pub -r 15 /waist_control geometry_msgs/Transform ‘[translation: [translation(x), 
-     translation(y), translation(z)], rotation: [rotation(x), rotation(y), rotation(z), w]’
-### Example
-    $roscore
-    $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
-    $rostopic pub -r 15 /waist_control geometry_msgs/Transform '{translation: [0, 0, 15], rotation: [0, 0, 0, 0]}' 
-
-***
-## Feedback Command
-1. gbot_waist 디렉토리를 catkin_ws/src에 다운받는다.
-2. $cd ~/catkin_ws && catkin_make
+      
+* 허리 제어
+      
+      $rostopic pub -r 15 /waist_control geometry_msgs/Transform ‘[translation: [translation(x), 
+      translation(y), translation(z)], rotation: [rotation(x), rotation(y), rotation(z), w]’
+      
+      Example
+      
+      $roscore
+      $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
+      $rostopic pub -r 15 /waist_control geometry_msgs/Transform '{translation: [0, 0, 15], rotation: [0, 0, 0, 0]}' 
 
 * 허리부(Waist) Feedback Node Run
-
+      
       $rosrun gbot_waist waist_Feedback #허리의 각 Actuator들의 길이 Feedback 토픽 Publish 
-    
+      
 * 초음파 Distance Feedback Node Run 
  
       $rosrun gbot_waist ultrasonic #초음파에서 측정된 거리 값 퍼블리셔 토픽 Publish
