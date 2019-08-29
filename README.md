@@ -33,9 +33,11 @@
 
 ## Test 1Mega
 * ROS Package install
+
       1. gbot_waist directory를 catkin_ws/src에 다운받는다.
       2. $cd ~/catkin_ws && catkin_make
-      
+
+* http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 * Arduino IDE Setup
     
       $sudo apt-get install ros-kinetic-rosserial-arduino
@@ -52,7 +54,7 @@
       $cd ~/Arduino/libraries
       $rm -rf ros_lib
       $rosrun rosserial_arduino make_libraries.py .
-* http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+
 
 * Start waist ROS Master
       
