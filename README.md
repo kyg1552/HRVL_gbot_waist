@@ -32,37 +32,37 @@
 * Arduino Mega2560
 
 ## Test 1Mega
-* ROS Package install
+* gbot_waist ROS Package install
 
       1. gbot_waist directory를 catkin_ws/src에 다운받는다.
       2. $cd ~/catkin_ws && catkin_make
 
 
-* Arduino IDE Setup
-* http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+* rosserial install for Arduino
+   * Arduino IDE Setup
+         * http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
     
-      $sudo apt-get install ros-kinetic-rosserial-arduino
-      $sudo apt-get install ros-kinetic-rosserial
+            $sudo apt-get install ros-kinetic-rosserial-arduino
+            $sudo apt-get install ros-kinetic-rosserial
     
-* Installing from Source onto the ROS workstation
+   * Installing from Source onto the ROS workstation
 
-      $cd ~/catkin_ws/src
-      $git clone https://github.com/ros-drivers/rosserial.git
-      $cd ~/catkin_ws && catkin_make
+          $cd ~/catkin_ws/src
+          $git clone https://github.com/ros-drivers/rosserial.git
+          $cd ~/catkin_ws && catkin_make
     
-* Install ros_lib into the Arduino Environment
+   * Install ros_lib into the Arduino Environment
     
-      $cd ~/Arduino/libraries
-      $rm -rf ros_lib
-      $rosrun rosserial_arduino make_libraries.py .
+         $cd ~/Arduino/libraries
+         $rm -rf ros_lib
+         $rosrun rosserial_arduino make_libraries.py .
 
-
-* Start waist ROS Master
+   * Start waist ROS Master
       
-      $roscore
-      $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
+         $roscore
+         $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
       
-* 허리 제어
+* gbot waist control
       
       $rostopic pub -r 15 /waist_control geometry_msgs/Transform ‘[translation: [translation(x), 
       translation(y), translation(z)], rotation: [rotation(x), rotation(y), rotation(z), w]’
