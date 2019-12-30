@@ -84,3 +84,8 @@ https://sites.google.com/view/hrvl
 * 초음파 Distance Feedback Node Run 
  
       $rosrun gbot_waist ultrasonic #초음파에서 측정된 거리 값 퍼블리셔 토픽 Publish
+
+## Reference
+* https://www.atlantis-press.com/proceedings/amsee-16/25858117
+* https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/index.html#
+* https://github.com/adamweld/microgoats_stewie
