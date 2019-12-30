@@ -71,8 +71,7 @@ https://sites.google.com/view/hrvl
       $rostopic pub -r 15 /waist_control geometry_msgs/Transform ‘[translation: [translation(x), 
       translation(y), translation(z)], rotation: [rotation(x), rotation(y), rotation(z), w]’
       
-      Example
-      
+      <Example>
       $roscore
       $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
       $rostopic pub -r 15 /waist_control geometry_msgs/Transform '{translation: [0, 0, 15], rotation: [0, 0, 0, 0]}' 
