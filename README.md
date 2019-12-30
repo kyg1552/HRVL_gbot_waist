@@ -30,6 +30,8 @@ https://sites.google.com/view/hrvl
         * https://www.pololu.com/product/2327
         * https://github.com/kyg1552/HRVL_gbot_waist/blob/master/Reference/LinearActuator_jrk_setup.pdf
          ![1](https://user-images.githubusercontent.com/37207332/61711681-939d5100-ad8f-11e9-8887-19512c0c3bb8.JPG)
+* Arduino Jrk Library Install Guide
+    * https://github.com/pololu/jrk-g2-arduino
 ***
 ## 사용보드
 * Arduino Mega2560
