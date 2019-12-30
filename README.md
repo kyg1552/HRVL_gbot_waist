@@ -3,8 +3,8 @@
 
 ## Waist: 3-RPS 3DOF Parallel Manipulator
 HRVL gbot 전체 내용은 아래 링크를 참조해주세요
+https://sites.google.com/view/hrvl 
 
-https://sites.google.com/view/hrvl
 ### Image
 ![waist 1](https://user-images.githubusercontent.com/37207332/61573044-e0a8cb00-aae2-11e9-916d-d7835c57ecef.jpg)
 
@@ -16,7 +16,6 @@ https://sites.google.com/view/hrvl
 ## Linear Actuator(Pololu)
 * Glideforce LACT12P-12V-05 Light-Duty Linear Actuator with Feedback: 15kgf, 12" Stroke (11.8" Usable), 1.7"/s, 12V
     * https://www.pololu.com/product/2327
-
 
 ## Linear Actuator Controller(Pololu)
 * Jrk 21v3 USB Motor Controller with Feedback (Connectors Soldered)
@@ -44,12 +43,10 @@ https://sites.google.com/view/hrvl
       1. gbot_waist directory를 catkin_ws/src에 다운받는다.
       2. $cd ~/catkin_ws && catkin_make
 
-
 * rosserial install for Arduino
    * http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
    * Arduino IDE Setup
             
-    
             $sudo apt-get install ros-kinetic-rosserial-arduino
             $sudo apt-get install ros-kinetic-rosserial
     
@@ -65,7 +62,7 @@ https://sites.google.com/view/hrvl
          $rm -rf ros_lib
          $rosrun rosserial_arduino make_libraries.py .
 
-* Start waist ROS Master
+* Start ROS Master & rosserial
       
          $roscore
          $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
@@ -80,7 +77,7 @@ https://sites.google.com/view/hrvl
       $rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
       $rostopic pub -r 15 /waist_control geometry_msgs/Transform '{translation: [0, 0, 15], rotation: [0, 0, 0, 0]}' 
 
-* 허리부(Waist) Feedback Node Run
+* Waist(허리부) Feedback Node Run
       
       $rosrun gbot_waist waist_Feedback #허리의 각 Actuator들의 길이 Feedback 토픽 Publish 
       
