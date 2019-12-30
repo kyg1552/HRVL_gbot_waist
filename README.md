@@ -32,6 +32,8 @@ https://sites.google.com/view/hrvl
          ![1](https://user-images.githubusercontent.com/37207332/61711681-939d5100-ad8f-11e9-8887-19512c0c3bb8.JPG)
 * Arduino Jrk Library Install Guide
     * https://github.com/pololu/jrk-g2-arduino
+    * Arduino Sketch Program -> Sketch menu -> Library Include -> Library Manager -> JrkG2 Library Install
+    * 아두이노 스케치 실행 -> 메뉴의 스케치 -> 라이브러리 포함하기 -> 라이브러리 관리 -> JrkG2 검색 후 설치
 ***
 ## 사용보드
 * Arduino Mega2560
