@@ -5,7 +5,7 @@
 HRVL gbot 전체 내용은 링크를 참조해주세요
 https://sites.google.com/view/hrvl 
 
-### 
+### Manipulator
 ![waist 1](https://user-images.githubusercontent.com/37207332/61573044-e0a8cb00-aae2-11e9-916d-d7835c57ecef.jpg)
 
 ***
