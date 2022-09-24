@@ -2,7 +2,7 @@
 
 
 ## Waist: 3-RPS 3DOF Parallel Manipulator
-HRVL gbot 전체 내용은 아래 링크를 참조해주세요
+HRVL gbot 전체 내용은 링크를 참조해주세요
 https://sites.google.com/view/hrvl 
 
 ### Image
